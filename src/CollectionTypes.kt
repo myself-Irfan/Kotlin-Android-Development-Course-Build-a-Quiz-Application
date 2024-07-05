@@ -2,10 +2,6 @@
 Demonstrates different collection types
  */
 
-fun main() {
-    setType()
-}
-
 fun mapOp() {
     val nums = setOf(1, 2, 3, 4, 5)
     println("Set: $nums")
