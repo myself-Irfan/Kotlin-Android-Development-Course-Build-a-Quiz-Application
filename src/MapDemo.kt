@@ -1,3 +1,7 @@
+/*
+Transform elements in a collection
+ */
+
 fun mapOp () {
     // assigning a set of unique int
     val nums = setOf(1, 2, 3, 4, 5)

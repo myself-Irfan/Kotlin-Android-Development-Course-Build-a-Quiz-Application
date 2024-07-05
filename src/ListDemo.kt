@@ -1,3 +1,9 @@
+/*
+ List is an ordered collection of elements
+ Can be mutable and immutable
+ */
+
+
 fun dataClass() {
     /*
     demonstrates data class
@@ -20,15 +26,15 @@ fun mutableList() {
      */
     val names = mutableListOf("Name1", "Name2", "Name3")
 
-    println("Before: ")
-    names.forEach {println(it)}
+    println("Before\t$names ")
+//    names.forEach {println(it)}
 
     names.removeAt(1)
     names.remove("Name3")
     names.add("Name4")
 
-    println("After: ")
-    names.forEach {println(it)}
+    println("After\t$names ")
+//    names.forEach {println(it)}
 }
 
 
