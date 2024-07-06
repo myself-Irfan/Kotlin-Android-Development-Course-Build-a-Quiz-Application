@@ -1,3 +1,58 @@
+fun windowDemo() {
+    val num = listOf("one", "two", "second", "three", "four", "five", "six", "third")
+    // it makes a window of specified size for each element until reaches the end
+    println(num.windowed(3))
+}
+
+
+fun chunkDemo() {
+    val num = (0..13).toList()
+    println(num.chunked(3)) // chunks list to a nested list with 3 elements per list
+    println(num.chunked(3) {it.sum()}) // returns a list of chunking by 3 element and summing them
+}
+
+
+fun dropTakeLast() {
+    /*
+    Demonstrates take, drop and last for both
+     */
+    val num = listOf("one", "two", "three", "four", "five", "six")
+
+    println(num.take(3)) // take the first 3 elements
+    println(num.takeLast(3)) // take the last 3 elements
+    println(num.drop(5)) // drop till 5 elements from start
+    println(num.dropLast(5)) // drop till 5 elements from end
+
+    println(num.takeWhile { !it.startsWith("f") }) // takes while element does not start with f
+    println(num.takeLastWhile { it != "three" }) // from last takes element until element is three
+    println(num.dropWhile { it.length == 3 }) // drops until element length is not 3
+    println(num.dropLastWhile { it.contains("i") }) // from last drops if element has i
+}
+
+fun listSlice() {
+    /*
+    Demonstrates slices
+     */
+    val num = listOf("one", "two", "three", "four", "five", "six", "seven")
+
+    println(num.slice(1..3)) // slicing by index
+    println(num.slice(0..4 step 2)) // index slicing but 2 increment
+    println(num.slice(setOf(3, 5, 0))) // index slicing with set
+}
+
+
+fun groupDemo() {
+    /*
+    Demonstrates groupBy
+     */
+    val num = listOf("one", "two", "three", "four", "five")
+    //groupsby the uppercased first character of the elements
+    println(num.groupBy { it.first().uppercase() })
+    //groupsby the first char of element and uppercases the elements
+    println(num.groupBy(keySelector = {it.first()}, valueTransform = {it.uppercase()}))
+}
+
+
 fun partitionDemo() {
     /*
     Demonstrates partition methods

@@ -12,6 +12,14 @@ fun liToMap() {
 }
 
 
+fun checkCol() {
+    val num = listOf("one", "two", "three", "four", "five")
+    println(num.any {it.endsWith("e")}) // return true if any value ends with e
+    println(num.none {it.endsWith("w")}) // return true if no val ends with w
+    println(num.all {it.length > 3}) // returns true if all value is greater than length 3
+}
+
+
 fun mapOp() {
     val nums = setOf(1, 2, 3, 4, 5)
     println("Set: $nums")
@@ -43,6 +51,25 @@ fun mapType() {
     map2.remove(2) // remove using key
     map2[2] = "Vlad"
     map2.forEach{index, value -> println("Index: $index\tValue: $value")}
+}
+
+
+fun plusMinusOp() {
+    /*
+    demonstrates plus and minus op with a list
+     */
+    val num = mutableListOf("one", "two", "three", "four")
+    num.add("five")
+    val plusLi = num + "six"
+    println(plusLi)
+
+    val minusLi = num - setOf("three", "four")
+    println(minusLi)
+
+    var num2 = (1..10).toList()
+    num2 = num2 + 11
+    num2 = num2 - 2
+    println(num2)
 }
 
 
