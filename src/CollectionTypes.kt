@@ -1,6 +1,16 @@
 /*
 Demonstrates different collection types
  */
+fun liToMap() {
+    val numLi:List<Int> = (1..10).toList()
+
+    val numMap = numLi.withIndex().associateBy(keySelector = {it.index}, valueTransform = {it.value})
+    println(numMap)
+
+    val numMap2 = numLi.withIndex().associate{it.index to it.value}
+    println(numMap2)
+}
+
 
 fun mapOp() {
     val nums = setOf(1, 2, 3, 4, 5)
