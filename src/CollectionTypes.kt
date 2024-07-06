@@ -76,15 +76,23 @@ fun plusMinusOp() {
 fun listType() {
     // immutable list
     val lst1 = listOf("Name1", "Name2", "Name3")
-    println(lst1)
+    println("Full list: $lst1")
+    println("First element: ${lst1.first()}") // return the first element
+    println("Last element: ${lst1.last()}") // return the last element
 
     // mutable list
-    val lst2 = mutableListOf("Name1", "Name2", "Name3")
+    val lst2 = mutableListOf("N0", "N1", "N2", "N3", "N5")
     println("Before $lst2")
     lst2.removeAt(1) // remove using index
-    lst2.remove("Name3") // remove using element
-    lst2.add("Name4") // append element
+    lst2.remove("N3") // remove using element
+    lst2.add("Irfan") // append element
     println("After $lst2")
+    // return the first element with length 5
+    println("First element with length 5: ${lst2.first{it.length == 5}}")
+    // returns last element that start with N
+    println("Last element starts with n: ${lst2.last {it.startsWith("N")}}")
+    println("Random: ${lst2.random()}") // return a random element
+    println("Checks if empty: ${lst2.isEmpty()}")
 }
 
 fun setType() {
