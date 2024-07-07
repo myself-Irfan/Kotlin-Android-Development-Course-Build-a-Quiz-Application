@@ -1,3 +1,16 @@
+fun aggregrateDemo() {
+    val num = listOf(6, 3, 10, 14, 4, 2, 99, 2, 99)
+
+    println("Sum is ${num.sum()}") // sum of all elements
+    println("Count is ${num.count()}") // count of list elements
+    println("Average is ${String.format("%.2f", num.average())}") // average of all elements
+    println("Max is ${num.maxOrNull()}") // return max of elements or null
+    println("Min is ${num.minOrNull()}") // return min of elements or null
+    println("Transformed sum is ${num.sumOf { it * 2 }}") // return sum of transformed value
+    println("Filtered & transformed sum is ${num.filter{ it % 2== 0 }.sumOf { it * it }}") // sum of filtered and transformed values
+}
+
+
 fun windowDemo() {
     val num = listOf("one", "two", "second", "three", "four", "five", "six", "third")
     // it makes a window of specified size for each element until reaches the end
